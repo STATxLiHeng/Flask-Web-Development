@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method ="post">
+    {{form.csrf_token}}
+    <div>
+        {{ form.username.label }}
+
+        {{ form.username }}
+        {% for error in form.username.errors %}
+                {{error}}
+        {% endfor %}
+
+    </div>
+    <div>
+       {{form.password.label}}
+<!--        <input type="text" name="password" value="">-->
+        {{ form.password }}
+    </div>
+<!--    <button>提交</button>-->
+        {{ form.submit }}
+</form>
+
+</body>
+</html>

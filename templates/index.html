@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1> 歡迎來到大學課堂</h1>
+    <p> 這是一堂.... 我是{{info['name']|capitalize}},年齡是{{info['age']}}</P>
+    <ul>
+        {% for itme in number %}
+        <li>
+            {{ itme }}
+            {% for i in range(2) %}
+                測試
+            {% endfor %}
+        </li>
+
+        {% endfor %}
+
+    </ul>
+<!--    <ul>-->
+<!--        <li>-->
+<!--            {{number[0]}}-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            {{number[1]}}-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            {{number[5]}}-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--    <ul>-->
+<!--        <li>-->
+<!--            {{number[2]}}-->
+<!--        </li>-->
+<!--    </ul>-->
+    <p>
+
+        {{user.name}}
+        {{user.get_info()|safe}}
+    </p>
+    <div>
+        {% if user.name == 'andy'%}
+            歡迎管理員
+        {% elif user.name =='mai' %}
+            歡迎版主
+        {% else %}
+            歡迎用戶
+        {% endif %}
+    </div>
+{% endblock %}
